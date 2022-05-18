@@ -50,8 +50,8 @@ function change_pass($db){session_start();
 
 session_start();
 
-$db_user = 'u47569';   // Логин БД
-$db_pass = '3312824';  // Пароль БД
+$db_user = 'u47535';   // Логин БД
+$db_pass = '8861894';  // Пароль БД
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   //реализация выхода из аккаунта и завершения сессии  
