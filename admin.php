@@ -16,9 +16,9 @@
 // PHP хранит логин и пароль в суперглобальном массиве $_SERVER.
 // Подробнее см. стр. 26 и 99 в учебном пособии Веб-программирование и веб-сервисы.
 
-$db_user = 'u47569';   // Логин БД
-$db_pass = '3312824';
-$db = new PDO('mysql:host=localhost;dbname=u47569', $db_user, $db_pass, array(
+$db_user = 'u47535';   // Логин БД
+$db_pass = '8861894';
+$db = new PDO('mysql:host=localhost;dbname=u47535', $db_user, $db_pass, array(
     PDO::ATTR_PERSISTENT => true
 ));
 $login = isset($_SERVER['PHP_AUTH_USER']) ? $_SERVER['PHP_AUTH_USER'] : '';
@@ -31,7 +31,7 @@ $admin_pass = $stmt->fetch();
 if (empty($_SERVER['PHP_AUTH_USER']) ||
     empty($_SERVER['PHP_AUTH_PW']) ||
     $_SERVER['PHP_AUTH_USER'] != 'admin' ||
-    !password_verify($_SERVER['PHP_AUTH_PW'], $admin_pass['pass'])){
+    $_SERVER["PHP_AUTH_PW"]!="admin"){
       header('HTTP/1.1 401 Unanthorized');
       header('WWW-Authenticate: Basic realm="My site"');
       print('<h1>401 Требуется авторизация</h1>');
